@@ -5,7 +5,7 @@ namespace Game.ScurvySurvivor
     public class ScriptDeMerdeTable : MonoBehaviour
     {
         [SerializeField] Material MatDeMerde;
-        public float test;
+        public float test = 10;
 
         private void Start()
         {
@@ -17,8 +17,8 @@ namespace Game.ScurvySurvivor
             float viewPos = (MatDeMerde.GetFloat("_Vertex")* 4 - 4 );
 
             Vector3 scale = transform.localScale;
-            scale.x = (20 + (transform.localPosition.x * viewPos));
-            scale.y = (20 + (transform.localPosition.x * viewPos));
+            scale.x = (test + (transform.localPosition.x * viewPos));
+            scale.y = (test + (transform.localPosition.x * viewPos));
             transform.localScale = scale;
 
             Debug.Log(viewPos);
