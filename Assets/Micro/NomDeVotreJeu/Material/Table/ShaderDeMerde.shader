@@ -4,13 +4,15 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
         _Vertex ("_Vertex", Range(0.8 , 1.25)) = 1
-        _Color ("_Color", Color) = (1,1,1,1)
+        [PreRendererData] _Color ("_Color", Color) = (1,1,1,1)
+        _ColorOutline ("_ColorOutline", Color) = (1,1,1,1)
     }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
         LOD 100
 		Cull off
+		Blend One OneMinusSrcAlpha
 
         Pass
         {
@@ -34,8 +36,10 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            float4 _MainTex_TexelSize;
 
 			fixed4 _Color;
+			fixed4 _ColorOutline;
 			float _Vertex;
 
             v2f vert (appdata v)

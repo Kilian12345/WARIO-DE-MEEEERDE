@@ -9,15 +9,31 @@ namespace Game.ScurvySurvivor
 
         Rigidbody2D RB;
 
+        private Color mouseOverColor = Color.blue;
+        private Color originalColor = Color.yellow;
+        private bool dragging = false;
+        private float distance;
+        SpriteRenderer renderer;
+
+        MaterialPropertyBlock propBlock;
+        public Color ObjectColor;
+
         private void Start()
         {
             RB = GetComponent<Rigidbody2D>();
+            renderer = GetComponent<SpriteRenderer>();
+            propBlock = new MaterialPropertyBlock();
+
+            renderer.GetPropertyBlock(propBlock);
+            propBlock.SetColor("_ColorSprite", ObjectColor);
+            renderer.SetPropertyBlock(propBlock);
         }
 
-        private void Update()
+        private void LateUpdate()
         {
             ShitScale();
             ShitMouv();
+            ShitDragAndDrop();
         }
 
         void ShitScale()
@@ -37,5 +53,38 @@ namespace Game.ScurvySurvivor
 
             RB.AddForce(force, ForceMode2D.Force);
         }
+
+        void ShitDragAndDrop()
+        {
+            if (dragging)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Vector3 rayPoint = ray.GetPoint(distance);
+                transform.position = rayPoint;
+            }
+        }
+
+
+        void OnMouseEnter()
+        {
+            renderer.material.SetColor("_Color" , Color.red );
+        }
+
+        void OnMouseExit()
+        {
+            renderer.material.SetColor("_Color", new Color(1,1,1,0));
+        }
+
+        void OnMouseDown()
+        {
+            distance = Vector3.Distance(transform.position, Camera.main.transform.position);
+            dragging = true;
+        }
+
+        void OnMouseUp()
+        {
+            dragging = false;
+        }
+
     }
 }

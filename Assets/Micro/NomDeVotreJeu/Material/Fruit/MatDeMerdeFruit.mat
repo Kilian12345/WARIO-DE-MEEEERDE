@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MatDeMerde
-  m_Shader: {fileID: 4800000, guid: edfb2cea8b16d7f41abedd5d29a4e67a, type: 3}
+  m_Name: MatDeMerdeFruit
+  m_Shader: {fileID: 4800000, guid: 05dbd03524682cd458ea9e44edb72249, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -71,8 +71,8 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Vertex: 0.8
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.735849, g: 0.4779015, b: 0.23255605, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 0}
+    - _ColorSprite: {r: 0.43985996, g: 0.8584906, b: 0.01214843, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
