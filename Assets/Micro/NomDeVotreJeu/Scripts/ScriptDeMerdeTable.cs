@@ -18,6 +18,8 @@ namespace Game.ScurvySurvivor
         MaterialPropertyBlock propBlock;
         public Color ObjectColor;
 
+        GameObject table;
+
         private void Start()
         {
             RB = GetComponent<Rigidbody2D>();
@@ -27,6 +29,8 @@ namespace Game.ScurvySurvivor
             renderer.GetPropertyBlock(propBlock);
             propBlock.SetColor("_ColorSprite", ObjectColor);
             renderer.SetPropertyBlock(propBlock);
+
+            table = GameObject.Find("TableDemerde");
         }
 
         private void LateUpdate()
@@ -61,6 +65,15 @@ namespace Game.ScurvySurvivor
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 Vector3 rayPoint = ray.GetPoint(distance);
                 transform.position = rayPoint;
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if(collision.gameObject.tag == "Water")
+            {
+                Macro.Lose();
+                Macro.EndGame();
             }
         }
 

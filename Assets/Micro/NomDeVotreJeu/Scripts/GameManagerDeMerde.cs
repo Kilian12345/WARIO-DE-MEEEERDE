@@ -27,14 +27,19 @@ namespace Game.RubikarioWare
         [SerializeField] GameObject Fruit;
         [SerializeField] GameObject Filet;
 
+        [Space(10)]
+        public int timeSeconde;
+        float time;
+        float  t;
+
         private void Start()
         {
-            fruits = GameObject.FindGameObjectsWithTag("Player");
-            randomValue = UnityEngine.Random.Range(1, 3);
-            StartCoroutine(WaitForWave());
-
             DifficultySpawn();
 
+            fruits = GameObject.FindGameObjectsWithTag("Player");
+            randomValue = UnityEngine.Random.Range(1, 3);
+
+            StartCoroutine(WaitForWave());
 
             Macro.StartGame();
         }
@@ -48,8 +53,18 @@ namespace Game.RubikarioWare
         {
             if (waveActivated == true)
             {
+                t += Time.deltaTime;
+                time = Mathf.Lerp(0 ,1 , t / timeSeconde);
                 Force();
+
+                if(time == 1)
+                {
+                    Macro.Win();
+                    Macro.EndGame();
+                }
             }
+
+
         }
 
         void Force()
