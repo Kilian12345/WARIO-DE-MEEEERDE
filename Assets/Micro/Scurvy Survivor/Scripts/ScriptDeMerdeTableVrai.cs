@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.RubikarioWare
+namespace Game.ScurvySurvivor
 {
     public class ScriptDeMerdeTableVrai : MonoBehaviour
     {

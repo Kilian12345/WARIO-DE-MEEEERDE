@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 
-namespace Game.RubikarioWare
+namespace Game.ScurvySurvivor
 {
     public class GameManagerDeMerde : MicroMonoBehaviour
     {
@@ -46,6 +46,12 @@ namespace Game.RubikarioWare
 
         protected override void OnGameStart()
         {
+            Macro.DisplayActionVerb("Save The Fruit!", 1);
+        }
+
+        protected override void OnActionVerbDisplayEnd()
+        {
+            Macro.StartTimer(5, true);
 
         }
 

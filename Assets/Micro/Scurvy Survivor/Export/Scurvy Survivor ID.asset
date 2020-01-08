@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2fcdcfd9d60bfe4c89b024ff6caf274, type: 3}
-  m_Name: NomDeVotreJeu ID
+  m_Name: Scurvy Survivor ID
   m_EditorClassIdentifier: 
   gameName: Scurvy Survivor
-  description: 
+  description: Il ne faut pas faire tomber les fruits
   verb: Save The Fruit!
   serieConstraints: 0
   scene:
