@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MatDeMerde
-  m_Shader: {fileID: 4800000, guid: edfb2cea8b16d7f41abedd5d29a4e67a, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_Name: Pixel
+  m_Shader: {fileID: 4800000, guid: 77c83d38501b6f84dad2eee8e5bd8979, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -63,6 +63,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Height: 75
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -71,9 +72,8 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Vertex: 1.25
+    - _Width: 150
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.735849, g: 0.4779015, b: 0.23255605, a: 1}
-    - _ColorOutline: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
