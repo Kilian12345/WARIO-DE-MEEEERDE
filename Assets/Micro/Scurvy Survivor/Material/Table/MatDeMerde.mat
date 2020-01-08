@@ -71,7 +71,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Vertex: 1.0493312
+    - _Vertex: 0.8
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.735849, g: 0.4779015, b: 0.23255605, a: 1}

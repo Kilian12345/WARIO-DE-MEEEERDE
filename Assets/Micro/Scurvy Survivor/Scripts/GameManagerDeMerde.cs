@@ -45,10 +45,11 @@ namespace Game.ScurvySurvivor
             FruitList[2] = Lemon;
             FruitList[3] = Orange;
 
-            fruits = GameObject.FindGameObjectsWithTag("Player");
             randomValue = UnityEngine.Random.Range(1, 3);
 
             DifficultySpawn();
+
+            fruits = GameObject.FindGameObjectsWithTag("Player");
 
             StartCoroutine(WaitForWave());
 

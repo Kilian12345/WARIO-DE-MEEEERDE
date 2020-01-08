@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5946574534433027298}
   m_Layer: 0
   m_Name: Orange
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +97,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OrangeDeMerde
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525036220877841437, guid: 422a0c989cd2e674aaf1dbe6b1814e75,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4525036220877841438, guid: 422a0c989cd2e674aaf1dbe6b1814e75,
         type: 3}

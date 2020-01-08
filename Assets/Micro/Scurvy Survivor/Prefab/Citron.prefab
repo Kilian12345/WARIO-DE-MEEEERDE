@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4901007070698138963}
   m_Layer: 0
   m_Name: Citron
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +97,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CitronDeMerde
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309110826066608597, guid: 5886649fd2442f74182ad4b2aab05add,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2309110826066608598, guid: 5886649fd2442f74182ad4b2aab05add,
         type: 3}

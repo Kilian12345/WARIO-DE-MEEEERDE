@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3688988556729948987}
   m_Layer: 0
   m_Name: Pomme
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +97,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PommeDeMerde
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305309751100606632, guid: 345f8d8017742704eb0f0e03a59e1d05,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6305309751100606635, guid: 345f8d8017742704eb0f0e03a59e1d05,
         type: 3}
