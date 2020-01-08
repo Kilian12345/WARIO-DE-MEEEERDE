@@ -1089,7 +1089,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d4d9c69694a54b568cdd1c00e2ea954, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f810835e484cdab4da5625a609ff4385, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1109,7 +1109,7 @@ Transform:
   m_GameObject: {fileID: 983835411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.57159096, y: -5.2836423, z: 100}
-  m_LocalScale: {x: 14.159386, y: 7.4036, z: 7.4036}
+  m_LocalScale: {x: 0.81428397, y: 0.5481781, z: 0.4257694}
   m_Children: []
   m_Father: {fileID: 218838412}
   m_RootOrder: 0
@@ -1137,7 +1137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1762082851}
   m_Layer: 0
-  m_Name: Fruit___
+  m_Name: FruitZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1152,7 +1152,7 @@ Transform:
   m_GameObject: {fileID: 1762082850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 325726127}
   - {fileID: 110551377}
@@ -1492,7 +1492,10 @@ MonoBehaviour:
   Arrow: {fileID: 712191076}
   spawnFruit: {fileID: 630963633}
   spawnFilet: {fileID: 2029145514}
-  Fruit: {fileID: 6305309751100606632, guid: 345f8d8017742704eb0f0e03a59e1d05, type: 3}
+  Apple: {fileID: 6305309751100606632, guid: 345f8d8017742704eb0f0e03a59e1d05, type: 3}
+  Banana: {fileID: 6789602092637757045, guid: 095c194daab000e4bb36110fe3bcad74, type: 3}
+  Lemon: {fileID: 2309110826066608597, guid: 5886649fd2442f74182ad4b2aab05add, type: 3}
+  Orange: {fileID: 4525036220877841437, guid: 422a0c989cd2e674aaf1dbe6b1814e75, type: 3}
   Filet: {fileID: 422424912794443456, guid: 14f7a75d1a3a1434692f742f6f933e20, type: 3}
   timeSeconde: 5
 --- !u!1001 &422424912081267979

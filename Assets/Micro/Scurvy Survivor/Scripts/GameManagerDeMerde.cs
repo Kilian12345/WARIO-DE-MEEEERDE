@@ -24,7 +24,12 @@ namespace Game.ScurvySurvivor
         [SerializeField] Transform spawnFruit;
         [SerializeField] Transform spawnFilet;
         [Space(5)]
-        [SerializeField] GameObject Fruit;
+        [SerializeField] GameObject Apple;
+        [SerializeField] GameObject Banana;
+        [SerializeField] GameObject Lemon;
+        [SerializeField] GameObject Orange;
+        GameObject[] FruitList = new GameObject[4];
+        GameObject Fruit;
         [SerializeField] GameObject Filet;
 
         [Space(10)]
@@ -34,10 +39,16 @@ namespace Game.ScurvySurvivor
 
         private void Start()
         {
-            DifficultySpawn();
+
+            FruitList[0] = Apple;
+            FruitList[1] = Banana;
+            FruitList[2] = Lemon;
+            FruitList[3] = Orange;
 
             fruits = GameObject.FindGameObjectsWithTag("Player");
             randomValue = UnityEngine.Random.Range(1, 3);
+
+            DifficultySpawn();
 
             StartCoroutine(WaitForWave());
 
@@ -120,7 +131,7 @@ namespace Game.ScurvySurvivor
                                     UnityEngine.Random.Range(-spawnFilet.localScale.y * 0.5f, spawnFilet.localScale.y * 0.5f),
                                     0), 
                         Quaternion.identity, 
-                        GameObject.Find("Fruit___").transform.parent);
+                        GameObject.Find("FruitZone").transform);
                 }
             }
             else if (Macro.Difficulty == 2)
@@ -136,39 +147,39 @@ namespace Game.ScurvySurvivor
 
                     if (randomSideX == 1 && randomSideY == 1)
                     {
-                        Instantiate(Fruit,
+                        Instantiate(FruitList[UnityEngine.Random.Range(0, 4)],
                             new Vector3(UnityEngine.Random.Range(-spawnFilet.localScale.x * 0.5f, -spawnFruit.localScale.x * 0.5f),
                                         UnityEngine.Random.Range(-spawnFilet.localScale.y * 0.5f, -spawnFruit.localScale.y * 0.5f),
                                         0),
                             Quaternion.identity,
-                            GameObject.Find("Fruit___").transform.parent);
+                            GameObject.Find("FruitZone").transform);
                     }
                     else if (randomSideX == 1 && randomSideY == 2)
                     {
-                        Instantiate(Fruit,
+                        Instantiate(FruitList[UnityEngine.Random.Range(0, 4)],
                             new Vector3(UnityEngine.Random.Range(-spawnFilet.localScale.x * 0.5f, -spawnFruit.localScale.x * 0.5f),
                                         UnityEngine.Random.Range(spawnFilet.localScale.y * 0.5f, spawnFruit.localScale.y * 0.5f),
                                         0),
                             Quaternion.identity,
-                            GameObject.Find("Fruit___").transform.parent);
+                            GameObject.Find("FruitZone").transform);
                     }
                     else if (randomSideX == 2 && randomSideY == 1)
                     {
-                        Instantiate(Fruit,
+                        Instantiate(FruitList[UnityEngine.Random.Range(0, 4)],
                             new Vector3(UnityEngine.Random.Range(spawnFilet.localScale.x * 0.5f, spawnFruit.localScale.x * 0.5f),
                                         UnityEngine.Random.Range(-spawnFilet.localScale.y * 0.5f, -spawnFruit.localScale.y * 0.5f),
                                         0),
                             Quaternion.identity,
-                            GameObject.Find("Fruit___").transform.parent);
+                            GameObject.Find("FruitZone").transform);
                     }
                     else if (randomSideX == 2 && randomSideY == 2)
                     {
-                        Instantiate(Fruit,
+                        Instantiate(FruitList[UnityEngine.Random.Range(0, 4)],
                             new Vector3(UnityEngine.Random.Range(spawnFilet.localScale.x * 0.5f, spawnFruit.localScale.x * 0.5f),
                                         UnityEngine.Random.Range(spawnFilet.localScale.y * 0.5f, spawnFruit.localScale.y * 0.5f),
                                         0),
                             Quaternion.identity,
-                            GameObject.Find("Fruit___").transform.parent);
+                            GameObject.Find("FruitZone").transform);
                     }
                 }
             }
@@ -193,39 +204,39 @@ namespace Game.ScurvySurvivor
 
                             if (randomSideX == 1 && randomSideY == 1)
                             {
-                                Instantiate(Fruit,
+                            Instantiate(FruitList[UnityEngine.Random.Range(0, 4)],
                                     new Vector3(UnityEngine.Random.Range(-spawnFilet.localScale.x * 0.5f, -spawnFruit.localScale.x * 0.5f),
                                                 UnityEngine.Random.Range(-spawnFilet.localScale.y * 0.5f, -spawnFruit.localScale.y * 0.5f),
                                                 0),
                                     Quaternion.identity,
-                                    GameObject.Find("Fruit___").transform.parent);
+                                    GameObject.Find("FruitZone").transform);
                             }
                             else if (randomSideX == 1 && randomSideY == 2)
                             {
-                                Instantiate(Fruit,
+                            Instantiate(FruitList[UnityEngine.Random.Range(0, 4)],
                                     new Vector3(UnityEngine.Random.Range(-spawnFilet.localScale.x * 0.5f, -spawnFruit.localScale.x * 0.5f),
                                                 UnityEngine.Random.Range(spawnFilet.localScale.y * 0.5f, spawnFruit.localScale.y * 0.5f),
                                                 0),
                                     Quaternion.identity,
-                                    GameObject.Find("Fruit___").transform.parent);
+                                    GameObject.Find("FruitZone").transform);
                             }
                             else if (randomSideX == 2 && randomSideY == 1)
                             {
-                                Instantiate(Fruit,
+                            Instantiate(FruitList[UnityEngine.Random.Range(0, 4)],
                                     new Vector3(UnityEngine.Random.Range(spawnFilet.localScale.x * 0.5f, spawnFruit.localScale.x * 0.5f),
                                                 UnityEngine.Random.Range(-spawnFilet.localScale.y * 0.5f, -spawnFruit.localScale.y * 0.5f),
                                                 0),
                                     Quaternion.identity,
-                                    GameObject.Find("Fruit___").transform.parent);
+                                    GameObject.Find("FruitZone").transform);
                             }
                             else if (randomSideX == 2 && randomSideY == 2)
                             {
-                                Instantiate(Fruit,
+                            Instantiate(FruitList[UnityEngine.Random.Range(0, 4)],
                                     new Vector3(UnityEngine.Random.Range(spawnFilet.localScale.x * 0.5f, spawnFruit.localScale.x * 0.5f),
                                                 UnityEngine.Random.Range(spawnFilet.localScale.y * 0.5f, spawnFruit.localScale.y * 0.5f),
                                                 0),
                                     Quaternion.identity,
-                                    GameObject.Find("Fruit___").transform.parent);
+                                    GameObject.Find("FruitZone").transform);
                             }
                     }
                     else
@@ -237,7 +248,7 @@ namespace Game.ScurvySurvivor
                                         UnityEngine.Random.Range(-spawnFilet.localScale.y * 0.5f, spawnFilet.localScale.y * 0.5f),
                                         0),
                             Quaternion.identity,
-                            GameObject.Find("Fruit___").transform.parent);
+                            GameObject.Find("FruitZone").transform);
                         
                     }
                 }
