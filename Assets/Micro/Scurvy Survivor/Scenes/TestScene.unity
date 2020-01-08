@@ -387,7 +387,7 @@ MonoBehaviour:
   verticalLimitMode: 2
   leftoverText: 
   textMaterial: {fileID: 2100000, guid: e490a80c3724140c0ad176edb075a09e, type: 2}
-  textMesh: {fileID: 431782327}
+  textMesh: {fileID: 675631638}
   rawTopLeftBounds: {x: 322.4, y: -50, z: 0}
   rawBottomRightBounds: {x: -322.4, y: 50, z: 0}
   rawBottomRightTextBounds: {x: 156, y: -70, z: 0}
@@ -517,7 +517,7 @@ PrefabInstance:
     - target: {fileID: 982258759447756348, guid: 3c8061e55931daa47ae7fbb5a0fa7ee6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 982258759447756348, guid: 3c8061e55931daa47ae7fbb5a0fa7ee6,
         type: 3}
@@ -536,7 +536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c8061e55931daa47ae7fbb5a0fa7ee6, type: 3}
---- !u!43 &431782327
+--- !u!43 &675631638
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

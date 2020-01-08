@@ -1492,10 +1492,10 @@ MonoBehaviour:
   Arrow: {fileID: 712191076}
   spawnFruit: {fileID: 630963633}
   spawnFilet: {fileID: 2029145514}
-  Apple: {fileID: 6305309751100606632, guid: 345f8d8017742704eb0f0e03a59e1d05, type: 3}
-  Banana: {fileID: 6789602092637757045, guid: 095c194daab000e4bb36110fe3bcad74, type: 3}
-  Lemon: {fileID: 2309110826066608597, guid: 5886649fd2442f74182ad4b2aab05add, type: 3}
-  Orange: {fileID: 4525036220877841437, guid: 422a0c989cd2e674aaf1dbe6b1814e75, type: 3}
+  Apple: {fileID: 4282993463500718820, guid: d98739b3524ee694d8b81109bf94eb23, type: 3}
+  Banana: {fileID: 7058613357330478645, guid: 0ff93732e8f686f4990fcf886ba3a1d2, type: 3}
+  Lemon: {fileID: 2826174814310502719, guid: 60666a58615f98549ae52b9d6b6bc0f3, type: 3}
+  Orange: {fileID: 6055771427796151262, guid: 44db0fa2bce447547a822f5045e85c97, type: 3}
   Filet: {fileID: 422424912794443456, guid: 14f7a75d1a3a1434692f742f6f933e20, type: 3}
   timeSeconde: 5
 --- !u!1001 &422424912081267979

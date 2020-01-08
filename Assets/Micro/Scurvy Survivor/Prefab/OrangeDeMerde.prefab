@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MatDeMerde: {fileID: 2100000, guid: 7e02bb21e5e178e4db56f7c2230f8473, type: 2}
-  test: 10
+  test: 2
   ObjectColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!50 &4525036220877841408
 Rigidbody2D:
