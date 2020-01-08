@@ -22,8 +22,9 @@ namespace Game.ScurvySurvivor
 
         private void Start()
         {
+            renderer = GetComponentInChildren<SpriteRenderer>();
             RB = GetComponent<Rigidbody2D>();
-            renderer = GetComponent<SpriteRenderer>();
+
             propBlock = new MaterialPropertyBlock();
 
             renderer.GetPropertyBlock(propBlock);

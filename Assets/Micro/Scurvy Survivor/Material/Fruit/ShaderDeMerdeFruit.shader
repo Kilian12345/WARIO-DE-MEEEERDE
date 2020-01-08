@@ -45,10 +45,10 @@ Shader "CustomDeMerde/ShaderDeMerdeFruit"
 					outlineC.a *= ceil(c.a);
 					outlineC.rgb *= outlineC.a;
 
-					fixed alpha_up = tex2D(_MainTex, i.uv + fixed2(0, _MainTex_TexelSize.y)).a;
-					fixed alpha_down = tex2D(_MainTex, i.uv - fixed2(0, _MainTex_TexelSize.y)).a;
-					fixed alpha_right = tex2D(_MainTex, i.uv + fixed2(_MainTex_TexelSize.x, 0)).a;
-					fixed alpha_left = tex2D(_MainTex, i.uv - fixed2(_MainTex_TexelSize.x, 0)).a;
+					fixed alpha_up = tex2D(_MainTex, i.uv + fixed2(0.05, _MainTex_TexelSize.y)).a;
+					fixed alpha_down = tex2D(_MainTex, i.uv - fixed2(0.05, _MainTex_TexelSize.y)).a;
+					fixed alpha_right = tex2D(_MainTex, i.uv + fixed2(_MainTex_TexelSize.x, 0.05)).a;
+					fixed alpha_left = tex2D(_MainTex, i.uv - fixed2(_MainTex_TexelSize.x, 0.05)).a;
 
 					return lerp(outlineC, c * _ColorSprite, ceil(alpha_up * alpha_down * alpha_right * alpha_left));
 				}
