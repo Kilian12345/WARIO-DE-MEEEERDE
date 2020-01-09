@@ -20,6 +20,8 @@ namespace Game.ScurvySurvivor
 
         GameObject table;
 
+        bool end = false;
+
         private void Start()
         {
             renderer = GetComponentInChildren<SpriteRenderer>();
@@ -71,10 +73,11 @@ namespace Game.ScurvySurvivor
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if(collision.gameObject.layer == 4)
+            if(collision.gameObject.layer == 4 && end == false)
             {
                 Macro.Lose();
                 Macro.EndGame();
+                end = true;
             }
         }
 

@@ -37,6 +37,8 @@ namespace Game.ScurvySurvivor
         float time;
         float  t;
 
+        bool end = false;
+
         private void Start()
         {
 
@@ -75,10 +77,11 @@ namespace Game.ScurvySurvivor
                 time = Mathf.Lerp(0 ,1 , t / timeSeconde);
                 Force();
 
-                if(time == 1)
+                if(time == 1 && end == false)
                 {
                     Macro.Win();
                     Macro.EndGame();
+                    end = true;
                 }
             }
 
