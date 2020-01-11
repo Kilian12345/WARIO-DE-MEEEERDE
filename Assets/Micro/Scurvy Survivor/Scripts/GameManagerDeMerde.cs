@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 
@@ -8,7 +9,6 @@ namespace Game.ScurvySurvivor
     {
         GameObject[] fruits;
 
-        [SerializeField] Material matDeMerde;
 
         Vector2 rightForce = new Vector2(0.5f, 0);
         Vector2 leftForce = new Vector2(-0.5f, 0);
@@ -18,7 +18,6 @@ namespace Game.ScurvySurvivor
 
         bool waveActivated = false;
         public float seconde = 5;
-        [SerializeField] GameObject Arrow;
 
         [Space(10)]
         [SerializeField] Transform spawnFruit;
@@ -38,6 +37,13 @@ namespace Game.ScurvySurvivor
         float  t;
 
         bool end = false;
+
+        [Space(20)]
+
+        // UI
+        [SerializeField]  RectTransform arrowMasktTrans;
+        [SerializeField]  RawImage arrowMasktImage;
+        [SerializeField]  Canvas canvas;
 
         private void Start()
         {
@@ -105,18 +111,25 @@ namespace Game.ScurvySurvivor
 
         IEnumerator WaitForWave()
         {
-            if (randomValue == 1)
-            {
-                Arrow.GetComponent<SpriteRenderer>().flipX = false;
-            }
-            else if (randomValue == 2)
-            {
-                Arrow.GetComponent<SpriteRenderer>().flipX = true;
+            float t = 0f;
 
+            while (t < 1)
+            {
+                t += Time.deltaTime / seconde;
+
+                if (randomValue == 1)
+                {
+                    arrowMasktTrans.transform.localScale = new Vector3(Mathf.Lerp(arrowMasktTrans.transform.localScale.x, 0, t), arrowMasktTrans.transform.localScale.y, 0);
+                }
+                else if (randomValue == 2)
+                {
+                    arrowMasktTrans.transform.localScale = new Vector3(Mathf.Lerp(arrowMasktTrans.transform.localScale.x, 0, t), arrowMasktTrans.transform.localScale.y, 0);
+
+                }
             }
 
             yield return new WaitForSeconds(seconde);
-            Arrow.SetActive(false);
+            canvas.enabled = false;
             waveActivated = true;
         }
 
