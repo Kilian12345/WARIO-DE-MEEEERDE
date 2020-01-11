@@ -46,6 +46,8 @@ namespace Game.ScurvySurvivor
         [SerializeField]  RectTransform arrowParent;
         [SerializeField]  Image arrowMasktImage;
         [SerializeField]  Canvas canvas;
+        public Text textWin;
+        public Text textLose;
 
 
         [Space(20)]
@@ -128,13 +130,20 @@ namespace Game.ScurvySurvivor
 
                 if (time == 1 && end == false)
                 {
-                    Macro.Win();
-                    Macro.EndGame();
-                    end = true;
+                    StartCoroutine(End());
                 }
             }
 
 
+        }
+
+        IEnumerator End()
+        {
+            textWin.enabled = true;
+            yield return new WaitForSeconds(1);
+            Macro.Win();
+            Macro.EndGame();
+            end = true;
         }
 
         void Force()

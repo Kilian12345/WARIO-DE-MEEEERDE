@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+using System.Collections;
 
 namespace Game.ScurvySurvivor
 {
@@ -103,9 +105,7 @@ namespace Game.ScurvySurvivor
         {
             if(transform.localPosition.x <= -8.83f || transform.localPosition.x >= 7.5f && end == false && dragging == false)
             {
-                Macro.Lose();
-                Macro.EndGame();
-                end = true;
+                StartCoroutine(End());
             }
         }
 
@@ -135,6 +135,15 @@ namespace Game.ScurvySurvivor
             gameMana.audioSource.clip = gameMana.DropSound;
             gameMana.audioSource.Play();
             dragging = false;
+        }
+
+        IEnumerator End()
+        {
+            gameMana.textLose.enabled = true;
+            yield return new WaitForSeconds(1);
+            Macro.Lose();
+            Macro.EndGame();
+            end = true;
         }
 
     }
