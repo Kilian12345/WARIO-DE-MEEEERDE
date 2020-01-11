@@ -35,6 +35,8 @@ namespace Game.ScurvySurvivor
         [Header("RB Values")]
         float RBValue = -4;
 
+        bool ghetto = false;
+
         private void Start()
         {
             gameMana = FindObjectOfType<GameManagerDeMerde>();
@@ -103,9 +105,16 @@ namespace Game.ScurvySurvivor
 
         void CheckDefeat()
         {
-            if(transform.localPosition.x <= -8.83f || transform.localPosition.x >= 7.5f && end == false && dragging == false)
+            if(transform.localPosition.x <= -8.83f || transform.localPosition.x >= 7.5f && end == false && dragging == false && ghetto == false)
             {
                 StartCoroutine(End());
+                ghetto = true;
+            }
+
+            if (gameMana.endMana == true || end == true)
+            {
+                gameMana.endMana = true;
+                RB.bodyType = RigidbodyType2D.Static ;
             }
         }
 
@@ -140,10 +149,11 @@ namespace Game.ScurvySurvivor
         IEnumerator End()
         {
             gameMana.textLose.enabled = true;
-            yield return new WaitForSeconds(1);
-            Macro.Lose();
-            Macro.EndGame();
             end = true;
+            Macro.Lose();
+            yield return new WaitForSeconds(1);
+            Macro.EndGame();
+
         }
 
     }

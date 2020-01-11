@@ -16,7 +16,7 @@ namespace Game.ScurvySurvivor
 
         [Space(10)]
 
-        bool waveActivated = false;
+        [HideInInspector] public bool waveActivated = false;
         public float seconde;
 
         [Space(10)]
@@ -36,7 +36,7 @@ namespace Game.ScurvySurvivor
         float time;
         float  t;
 
-        bool end = false;
+        [HideInInspector] public bool endMana = false;
 
         [Space(20)]
         [Header ("UI")]
@@ -66,6 +66,8 @@ namespace Game.ScurvySurvivor
         public AudioClip PickUpSound;
         public AudioClip DropSound;
         [HideInInspector] public AudioSource audioSource;
+
+        bool ghetto = false;
 
         private void Start()
         {
@@ -128,9 +130,10 @@ namespace Game.ScurvySurvivor
 
                 CameraShake();
 
-                if (time == 1 && end == false)
+                if (time == 1 && endMana == false && ghetto == false)
                 {
                     StartCoroutine(End());
+                    ghetto = true;
                 }
             }
 
@@ -140,10 +143,10 @@ namespace Game.ScurvySurvivor
         IEnumerator End()
         {
             textWin.enabled = true;
-            yield return new WaitForSeconds(1);
+            endMana = true;
             Macro.Win();
+            yield return new WaitForSeconds(1);
             Macro.EndGame();
-            end = true;
         }
 
         void Force()

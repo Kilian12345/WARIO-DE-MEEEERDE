@@ -1166,7 +1166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1043732508
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043732507}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -1883,7 +1883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2089217888
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1910,7 +1910,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089217887}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -2045,6 +2045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightForce: {x: 2, y: 0}
   leftForce: {x: -2, y: 0}
+  waveActivated: 0
   seconde: 1
   spawnFruit: {fileID: 630963633}
   spawnFilet: {fileID: 2029145514}
@@ -2054,12 +2055,13 @@ MonoBehaviour:
   Orange: {fileID: 6055771427796151262, guid: 44db0fa2bce447547a822f5045e85c97, type: 3}
   Filet: {fileID: 422424912794443456, guid: 14f7a75d1a3a1434692f742f6f933e20, type: 3}
   timeSeconde: 5
+  endMana: 0
   arrowMasktTrans: {fileID: 1356828564}
   arrowParent: {fileID: 1545334856}
   arrowMasktImage: {fileID: 1356828565}
   canvas: {fileID: 638490873}
-  textWin: {fileID: 0}
-  textLose: {fileID: 0}
+  textWin: {fileID: 1043732509}
+  textLose: {fileID: 2089217889}
   shakeDuration: 1
   shakeAmount: 0.3
   decreaseFactor: 2
