@@ -17,7 +17,7 @@ namespace Game.ScurvySurvivor
         [Space(10)]
 
         bool waveActivated = false;
-        public float seconde = 5;
+        public float seconde;
 
         [Space(10)]
         [SerializeField] Transform spawnFruit;
@@ -42,7 +42,7 @@ namespace Game.ScurvySurvivor
 
         // UI
         [SerializeField]  RectTransform arrowMasktTrans;
-        [SerializeField]  RawImage arrowMasktImage;
+        [SerializeField]  Image arrowMasktImage;
         [SerializeField]  Canvas canvas;
 
         private void Start()
@@ -59,7 +59,7 @@ namespace Game.ScurvySurvivor
 
             fruits = GameObject.FindGameObjectsWithTag("Player");
 
-            StartCoroutine(WaitForWave());
+            canvas.enabled = false;
 
             Macro.StartGame();
         }
@@ -72,6 +72,8 @@ namespace Game.ScurvySurvivor
         protected override void OnActionVerbDisplayEnd()
         {
             Macro.StartTimer(5, true);
+            canvas.enabled = true;
+            StartCoroutine(WaitForWave());
 
         }
 
@@ -112,20 +114,38 @@ namespace Game.ScurvySurvivor
         IEnumerator WaitForWave()
         {
             float t = 0f;
+            var currentScale = arrowMasktTrans.transform.localScale;
 
             while (t < 1)
             {
                 t += Time.deltaTime / seconde;
 
-                if (randomValue == 1)
+                arrowMasktTrans.transform.localScale = new Vector3(Mathf.Lerp(currentScale.x, 0, t), currentScale.y, 0);
+
+
+                if (t < 0.5f)
                 {
-                    arrowMasktTrans.transform.localScale = new Vector3(Mathf.Lerp(arrowMasktTrans.transform.localScale.x, 0, t), arrowMasktTrans.transform.localScale.y, 0);
+                    arrowMasktImage.color = new Color(Mathf.Lerp(0, 1, (t * 2f)), 1, 0);
+                    Debug.Log("tamere");
+                }
+                else if (t >= 0.5f)
+                {
+                    arrowMasktImage.color = new Color(255, Mathf.Lerp(1, 0, t * 2f - 1), 0);
+                    Debug.Log("tapere");
+                }
+
+
+                /*if (randomValue == 1)
+                {
+                    arrowMasktTrans.transform.localScale = new Vector3(Mathf.Lerp(currentScale.x, 0, t), currentScale.y, 0);
                 }
                 else if (randomValue == 2)
                 {
-                    arrowMasktTrans.transform.localScale = new Vector3(Mathf.Lerp(arrowMasktTrans.transform.localScale.x, 0, t), arrowMasktTrans.transform.localScale.y, 0);
+                    arrowMasktTrans.transform.localScale = new Vector3(Mathf.Lerp(currentScale.x, 0, t), currentScale.y, 0);
 
-                }
+                }*/
+                yield return arrowMasktTrans.transform.localScale;
+                yield return arrowMasktImage.color;
             }
 
             yield return new WaitForSeconds(seconde);
