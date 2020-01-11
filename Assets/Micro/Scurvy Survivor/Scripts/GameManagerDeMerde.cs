@@ -10,8 +10,8 @@ namespace Game.ScurvySurvivor
         GameObject[] fruits;
 
 
-        Vector2 rightForce = new Vector2(0.5f, 0);
-        Vector2 leftForce = new Vector2(-0.5f, 0);
+        public Vector2 rightForce = new Vector2(0.5f, 0);
+        public Vector2 leftForce = new Vector2(-0.5f, 0);
         int randomValue;
 
         [Space(10)]
@@ -47,8 +47,30 @@ namespace Game.ScurvySurvivor
         [SerializeField]  Image arrowMasktImage;
         [SerializeField]  Canvas canvas;
 
+
+        [Space(20)]
+        [Header("Camera Shake")]
+
+        // How long the object should shake for.
+        public float shakeDuration = 0f;
+        public float shakeAmount = 0.7f;
+        public float decreaseFactor = 1.0f;
+        Vector3 originalPos;
+        Transform camTransform;
+
+        [Space(20)]
+        [Header("Sound")]
+
+        public AudioClip PickUpSound;
+        public AudioClip DropSound;
+        [HideInInspector] public AudioSource audioSource;
+
         private void Start()
         {
+            audioSource = GetComponent<AudioSource>();
+
+            camTransform = FindObjectOfType<Pixel>().GetComponent<Camera>().transform;
+            originalPos = camTransform.localPosition;
 
             FruitList[0] = Apple;
             FruitList[1] = Banana;
@@ -64,6 +86,21 @@ namespace Game.ScurvySurvivor
             canvas.enabled = false;
 
             Macro.StartGame();
+        }
+
+        void CameraShake()
+        {
+            if (shakeDuration > 0)
+            {
+                camTransform.localPosition = originalPos + UnityEngine.Random.insideUnitSphere * shakeAmount;
+
+                shakeDuration -= Time.deltaTime * decreaseFactor;
+            }
+            else
+            {
+                shakeDuration = 0f;
+                camTransform.localPosition = originalPos;
+            }
         }
 
         protected override void OnGameStart()
@@ -87,7 +124,9 @@ namespace Game.ScurvySurvivor
                 time = Mathf.Lerp(0 ,1 , t / timeSeconde);
                 Force();
 
-                if(time == 1 && end == false)
+                CameraShake();
+
+                if (time == 1 && end == false)
                 {
                     Macro.Win();
                     Macro.EndGame();
@@ -223,19 +262,19 @@ namespace Game.ScurvySurvivor
             }
             else
             {
-                spawnNumber = UnityEngine.Random.Range(3, 7);
+                int spawnNumberThree = UnityEngine.Random.Range(5, 7); // De base (3,7)
                 int randomSideX;
                 int randomSideY;
                 int whatObject;
 
                 
-                for (int i = 0; i < spawnNumber; i++)
+                for (int i = 0; i < spawnNumberThree; i++)
                 {
                         randomSideX = UnityEngine.Random.Range(1, 3);
                         randomSideY = UnityEngine.Random.Range(1, 3);
-                        whatObject = UnityEngine.Random.Range(1, 3);
+                        whatObject = UnityEngine.Random.Range(1, 4);
 
-                    if (whatObject == 1)
+                    if (whatObject <= 2)
                     {
                             randomSideX = UnityEngine.Random.Range(1, 3);
                             randomSideY = UnityEngine.Random.Range(1, 3);
@@ -279,7 +318,7 @@ namespace Game.ScurvySurvivor
                     }
                     else
                     {
-                        spawnNumber = UnityEngine.Random.Range(1, 5);
+                        int spawnNumberThreeDos = UnityEngine.Random.Range(1, 3);
 
                         Instantiate(Filet,
                             new Vector3(UnityEngine.Random.Range(-spawnFilet.localScale.x * 0.5f, spawnFilet.localScale.x * 0.5f),

@@ -4,6 +4,7 @@ namespace Game.ScurvySurvivor
 {
     public class ScriptDeMerdeTable : MonoBehaviour
     {
+        GameManagerDeMerde gameMana;
         [SerializeField] Material MatDeMerde;
         public float test = 10;
 
@@ -28,8 +29,13 @@ namespace Game.ScurvySurvivor
         Vector3 scale;
         Vector3 position;
 
+        [Space(30)]
+        [Header("RB Values")]
+        float RBValue = -4;
+
         private void Start()
         {
+            gameMana = FindObjectOfType<GameManagerDeMerde>();
             renderer = GetComponentInChildren<SpriteRenderer>();
             RB = GetComponent<Rigidbody2D>();
             collider = GetComponent<Collider2D>();
@@ -66,7 +72,7 @@ namespace Game.ScurvySurvivor
         void ShitMouv()
         {
             float viewPos2 = (MatDeMerde.GetFloat("_Vertex") * 4 - 4);
-            Vector2 force = new Vector2(viewPos2 * -1, 0.0f);
+            Vector2 force = new Vector2(viewPos2 * RBValue, 0.0f);
 
             RB.AddForce(force, ForceMode2D.Force);
         }
@@ -95,7 +101,7 @@ namespace Game.ScurvySurvivor
 
         void CheckDefeat()
         {
-            if(transform.localPosition.x <= -8.83f || transform.localPosition.x >= 7.5f && end == false)
+            if(transform.localPosition.x <= -8.83f || transform.localPosition.x >= 7.5f && end == false && dragging == false)
             {
                 Macro.Lose();
                 Macro.EndGame();
@@ -119,11 +125,15 @@ namespace Game.ScurvySurvivor
         void OnMouseDown()
         {
             distance = Vector3.Distance(transform.position, new Vector3(camera.transform.position.x, camera.transform.position.y ,0));
+            gameMana.audioSource.clip = gameMana.PickUpSound;
+            gameMana.audioSource.Play();
             dragging = true;
         }
 
         void OnMouseUp()
         {
+            gameMana.audioSource.clip = gameMana.DropSound;
+            gameMana.audioSource.Play();
             dragging = false;
         }
 
