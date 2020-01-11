@@ -205,6 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MatDeMerde: {fileID: 2100000, guid: 7e02bb21e5e178e4db56f7c2230f8473, type: 2}
   test: 10
+  IsItFilet: 0
   ObjectColor: {r: 0.26959804, g: 0.7735849, b: 0.062032763, a: 1}
 --- !u!212 &110551381
 SpriteRenderer:
@@ -522,6 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MatDeMerde: {fileID: 2100000, guid: 7e02bb21e5e178e4db56f7c2230f8473, type: 2}
   test: 10
+  IsItFilet: 0
   ObjectColor: {r: 0.8679245, g: 0.05322181, b: 0.05322181, a: 1}
 --- !u!212 &462852190
 SpriteRenderer:
@@ -617,7 +619,7 @@ GameObject:
   - component: {fileID: 515324085}
   - component: {fileID: 515324084}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: SSCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1122,7 +1124,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: f810835e484cdab4da5625a609ff4385, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1229,7 +1231,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 20c15341e0ef1ea47b9d2b34ed3331ba, type: 3}
   m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
   m_FlipX: 0
@@ -1309,7 +1311,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 373003801aafa3743868a5b4df53c33f, type: 3}
   m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
   m_FlipX: 0
@@ -1564,7 +1566,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 14d22fc50ba113542bdd7ff313c1633b, type: 3}
   m_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
   m_FlipX: 0
