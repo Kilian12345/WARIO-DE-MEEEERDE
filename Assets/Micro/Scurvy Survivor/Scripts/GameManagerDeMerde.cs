@@ -39,9 +39,11 @@ namespace Game.ScurvySurvivor
         bool end = false;
 
         [Space(20)]
+        [Header ("UI")]
 
         // UI
         [SerializeField]  RectTransform arrowMasktTrans;
+        [SerializeField]  RectTransform arrowParent;
         [SerializeField]  Image arrowMasktImage;
         [SerializeField]  Canvas canvas;
 
@@ -126,29 +128,28 @@ namespace Game.ScurvySurvivor
                 if (t < 0.5f)
                 {
                     arrowMasktImage.color = new Color(Mathf.Lerp(0, 1, (t * 2f)), 1, 0);
-                    Debug.Log("tamere");
                 }
                 else if (t >= 0.5f)
                 {
                     arrowMasktImage.color = new Color(255, Mathf.Lerp(1, 0, t * 2f - 1), 0);
-                    Debug.Log("tapere");
                 }
 
 
-                /*if (randomValue == 1)
+                if (randomValue == 1)
                 {
-                    arrowMasktTrans.transform.localScale = new Vector3(Mathf.Lerp(currentScale.x, 0, t), currentScale.y, 0);
+                    arrowParent.transform.localScale = new Vector3(-1,1,1);
                 }
                 else if (randomValue == 2)
                 {
-                    arrowMasktTrans.transform.localScale = new Vector3(Mathf.Lerp(currentScale.x, 0, t), currentScale.y, 0);
+                    arrowParent.transform.localScale = new Vector3(1, 1, 1);
 
-                }*/
+                }
+
                 yield return arrowMasktTrans.transform.localScale;
                 yield return arrowMasktImage.color;
             }
 
-            yield return new WaitForSeconds(seconde);
+            //yield return new WaitForSeconds(seconde);
             canvas.enabled = false;
             waveActivated = true;
         }

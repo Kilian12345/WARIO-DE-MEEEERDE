@@ -49,6 +49,7 @@ namespace Game.ScurvySurvivor
             ShitScale();
             ShitMouv();
             ShitDragAndDrop();
+            CheckDefeat();
         }
 
         void ShitScale()
@@ -92,9 +93,9 @@ namespace Game.ScurvySurvivor
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        void CheckDefeat()
         {
-            if(collision.gameObject.layer == 4 && end == false)
+            if(transform.localPosition.x <= -8.83f || transform.localPosition.x >= 7.5f && end == false)
             {
                 Macro.Lose();
                 Macro.EndGame();
