@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ad708abf202d5145966ede5b30b588b, type: 3}
-  m_Name: GameID
+  m_Name: Scurvy Survivor ID
   m_EditorClassIdentifier: 
   titles:
   - Scurvy Survivor
   - Scurvy Survivor
   descriptions:
-  - Tu les fruits de tomber.
+  - Tu dois empecher les fruits de tomber.
   - You have to save the fruits.
   actionVerbs:
   - Save The Fruit!
